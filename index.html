@@ -5,7 +5,7 @@
 		<meta name='viewport' content="width=device-width"/>
 		<title></title>
 		<script src='js/jquery.js'></script>
-		<link rel="stylesheet" href="todo.css" />
+		<link rel="stylesheet" href="css/todo.css" />
 		<link rel="stylesheet" href="http://at.alicdn.com/t/font_bbrbk0v7pmk7qfr.css" />
 	</head>
 	<body>
@@ -34,7 +34,8 @@
 		<!--添加任务-->
 		<div id="fox">
 			<div class="list">
-				热污染任务我委屈体育
+				<span class="sss">问问企鹅我去二无群</span>
+				<span class="kkk">删除</span>
 			</div>
 		</div>
 		
@@ -118,11 +119,21 @@
 			})
 			$('#fox').on('touchend','div.list',function(e){
 				var bb=e.originalEvent.changedTouches[0].clientX;
-				if(bb-aa>50){
+				if(bb-aa>30){
 //					$('.list').css('color','#ccc')
-					arr.splice($(this).index(),1);
-					localStorage.x=JSON.stringify(arr);
-					$(this).remove();
+					$('.kkk').css('display','block').css('color','red')
+					$('.sss').css('color','#ccc')
+					var yy=$(this).index();
+					$('.kkk').on('click',function(){
+						arr.splice(yy,1);
+						localStorage.x=JSON.stringify(arr);
+						$('.list').eq(yy).remove();
+					})
+					
+				}
+				if(bb-aa<-30){
+					$('.sss').css('color','#000');
+					$('.kkk').css('color','#000')
 				}
 			})
 			
@@ -159,7 +170,7 @@
 				$('#fox').empty();
 				for(var i=0;i<arr.length;i++){
 //					var c=(arr[i].state) ? "done" :"";
-					$('<div class="list">'+arr[i]+'</div>').appendTo($('#fox'));
+					$('<div class="list"><span class="sss">'+arr[i]+'</span><span class="kkk">删除</span></div>').appendTo($('#fox'));
 				}
 			}
 		

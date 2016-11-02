@@ -1,0 +1,326 @@
+@charset "UTF-8";
+html {
+  font-size: 100px;
+}
+
+body {
+  font-size: 15px;
+  margin: 0px;
+  padding: 0px;
+  font-family: "微软雅黑";
+  border: 0px;
+}
+
+* {
+  font-family: "微软雅黑";
+  box-sizing: border-box;
+  outline: none;
+}
+
+@font-face {
+  font-family: 'iconfont';
+}
+
+.iconfont {
+  font-family: 'iconfont';
+}
+
+ul, li, ol {
+  text-decoration: none;
+  list-style: none;
+}
+
+@media screen and (min-width: 320px) {
+  html {
+    font-size: 85.33333px;
+  }
+}
+
+@media screen and (min-width: 360px) {
+  html {
+    font-size: 96px;
+  }
+}
+
+@media screen and (min-width: 375px) {
+  html {
+    font-size: 100px;
+  }
+}
+
+@media screen and (min-width: 384px) {
+  html {
+    font-size: 102.4px;
+  }
+}
+
+@media screen and (min-width: 412px) {
+  html {
+    font-size: 109.86667px;
+  }
+}
+
+@media screen and (min-width: 414px) {
+  html {
+    font-size: 110.4px;
+  }
+}
+
+@media screen and (min-width: 600px) {
+  html {
+    font-size: 160px;
+  }
+}
+
+@media screen and (min-width: 640px) {
+  html {
+    font-size: 170.66667px;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  html {
+    font-size: 204.8px;
+  }
+}
+
+@media screen and (min-width: 800px) {
+  html {
+    font-size: 213.33333px;
+  }
+}
+
+@media screen and (min-width: 1280px) {
+  html {
+    font-size: 341.33333px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  html {
+    font-size: 384px;
+  }
+}
+
+@media screen and (min-width: 1600px) {
+  html {
+    font-size: 426.66667px;
+  }
+}
+
+.box {
+  width: 100%;
+  height: 0.5rem;
+  background: #343D40;
+  position: relative;
+}
+
+.box .a {
+  position: absolute;
+  bottom: 0.05rem;
+  left: 1.7rem;
+  color: #fff;
+  font-size: 18px;
+}
+
+.box .b {
+  outline: none;
+  border: 0;
+  width: 0.16rem;
+  height: 0.16rem;
+  line-height: 16px;
+  text-align: center;
+  position: absolute;
+  bottom: 0.1rem;
+  right: 0.2rem;
+  color: #fff;
+  font-size: 30px;
+  background: none;
+}
+
+.box #logo {
+  overflow: hidden;
+  width: 0.25rem;
+  height: 0.25rem;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0.05rem;
+  left: 0.1rem;
+  background: red;
+  z-index: 3;
+}
+
+.box #logo .n {
+  width: 0.25rem;
+  height: 0.25rem;
+}
+
+.tankuang {
+  width: 100%;
+  height: 1rem;
+  background: #FCFCFC;
+  position: absolute;
+  top: 2rem;
+  left: 100%;
+  opacity: 0;
+  transform: scale(0);
+  transition: all 1s;
+}
+
+.tankuang .a {
+  position: absolute;
+  right: 0;
+  left: 0;
+  margin: auto;
+  width: 95%;
+  height: 0.5rem;
+  border: 1px solid #EDEDED;
+  -webkit-border-radius: 10px;
+  outline: none;
+}
+
+.tankuang .b {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50%;
+  height: 0.4rem;
+  float: left;
+  border: 1px solid #EDEDED;
+  background: #fff;
+  outline: none;
+}
+
+.tankuang .c {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  left: 50%;
+  width: 50%;
+  height: 0.4rem;
+  float: left;
+  border: 1px solid #EDEDED;
+  background: #fff;
+  outline: none;
+  color: cornflowerblue;
+}
+
+#fox .list {
+  float: left;
+  width: 100%;
+  height: 0.45rem;
+  background: #FCFCFC;
+  border-bottom: 1px solid #EDEDED;
+  line-height: 0.45rem;
+  padding-left: 0.1rem;
+  color: #343D40;
+  position: relative;
+  transition: all 1s;
+}
+
+#fox .list .kkk {
+  position: absolute;
+  right: 0.1rem;
+  top: 0rem;
+  color: #000;
+  display: none;
+  transition: all 1s;
+}
+
+.bottom {
+  width: 100%;
+  height: 0.5rem;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  z-index: 1000000;
+  border-top: 1px solid #ccc;
+  border: 0px;
+  background: none;
+}
+
+.bottom .a, .bottom .b, .bottom .c, .bottom .d, .bottom .e {
+  width: 20%;
+  height: 100%;
+  float: left;
+  text-align: center;
+  line-height: 0.5rem;
+}
+
+.bottom .a .iconfont, .bottom .b .iconfont, .bottom .c .iconfont, .bottom .d .iconfont, .bottom .e .iconfont {
+  border: 0px;
+  background: none;
+  font-size: 25px;
+}
+
+.cehua {
+  width: 90%;
+  height: 100%;
+  background: #F2F2F2;
+  position: absolute;
+  top: 0px;
+  left: -90%;
+  z-index: 100;
+  transition: all 1s;
+}
+
+.cehua .tou {
+  width: 100%;
+  height: 1.2rem;
+  background: #0AB6F4;
+}
+
+.cehua .tou .log {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+  float: left;
+  margin-top: 0.35rem;
+  margin-left: 0.2rem;
+  overflow: hidden;
+}
+
+.cehua .tou .log .s {
+  width: 0.5rem;
+}
+
+.cehua .tou .jiantou {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.2rem;
+  line-height: 0.2rem;
+}
+
+.cehua .tou .jiantou .iconfont {
+  color: #fff;
+  font-size: 25px;
+}
+
+.cehua .tou .wenzi {
+  width: auto;
+  position: absolute;
+  bottom: 5.5rem;
+  left: 0.2rem;
+}
+
+.cehua .tou .wenzi .aa {
+  color: #fff;
+  font-size: 15px;
+}
+
+.cehua .biaoqian {
+  width: 100%;
+  height: 0.5rem;
+  line-height: 0.5rem;
+  padding-left: 0.2rem;
+}
+
+.cehua .biaoqian .iconfont {
+  font-size: 20px;
+}
+
+.cehua .biaoqian .k {
+  margin-left: 0.1rem;
+  color: #000;
+  font-size: 20px;
+}
