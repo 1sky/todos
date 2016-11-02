@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name='viewport' content="width=device-width"/>
+		<title></title>
+		<script src='js/jquery.js'></script>
+		<link rel="stylesheet" href="todo.css" />
+		<link rel="stylesheet" href="http://at.alicdn.com/t/font_bbrbk0v7pmk7qfr.css" />
+	</head>
+	<body>
+		<!--侧滑-->
+		<!--<div class="cehua">
+			
+			
+			
+		</div>-->
+		
+		
+		
+		<!--便签-->
+		<div class="box">
+			<span class="a">便签</span>
+			<button class="b" id='anniu'>+</button>
+			<div id='logo'>
+				<img src="img/395.jpg" alt="" class="n" />
+			</div>
+		</div>
+		<div class="tankuang">
+			<input type="text" class="a" id='ttt'/>
+			<button class="b" id='xiao'>取消</button>
+			<button class="c" id='que'>确定</button>
+		</div>
+		<!--添加任务-->
+		<div id="fox">
+			<div class="list">
+				热污染任务我委屈体育
+			</div>
+		</div>
+		
+		<!--侧滑-->
+		<div class="cehua">
+			<div class="tou">
+				<div class="log">
+					<img src="img/395.jpg" alt="" class="s" />
+				</div>
+				<div class="wenzi">
+					<span class="aa">我的私事</span>
+				</div>
+				<div class="jiantou">
+					<span class="iconfont">&#xe605;</span>
+				</div>
+			</div>
+			<div class="biaoqian">
+				<span class="iconfont">&#xe664;</span>
+				<span class="k">便签</span>
+			</div>
+			<div class="biaoqian">
+				<span class="iconfont">&#xe62b;</span>
+				<span class="k">标签</span>
+			</div>
+			<div class="biaoqian">
+				<span class="iconfont">&#xe6f1;</span>
+				<span class="k">项目</span>
+			</div>
+			<div class="biaoqian">
+				<span class="iconfont">&#xe884;</span>
+				<span class="k">地点</span>
+			</div>
+			<div class="biaoqian">
+				<span class="iconfont">&#xe62d;</span>
+				<span class="k">时间轴</span>
+			</div>
+			<div class="bottom">
+				<div class="a">
+					<button class='iconfont'>&#xe633;</button>
+				</div>
+				<div class="b">
+					<button class="iconfont">&#xe621;</button>
+				</div>
+				<div class="c">
+					<button class="iconfont">&#xe634;</button>
+				</div>
+				<div class="d">
+					<button class="iconfont">&#xe62e;</button>
+				</div>
+				<div class="e">
+					<button class="iconfont">&#xe67a;</button>
+				</div>
+			</div>
+			
+		</div>
+	</body>
+	<script>
+		$(function(){
+//			侧滑
+			$('#logo').on('click',function(){
+				$('.cehua').css('left','0')
+			})
+			$('.jiantou').on('click',function(){
+				$('.cehua').css('left','-90%')
+			})
+			
+			
+			var arr=[];
+			var aa;
+	if(localStorage.x){
+			arr=JSON.parse(localStorage.x);
+			render();
+		}
+		$('#que').on("touchstart",function(){
+			render();
+		})
+		
+		
+			$('#fox').on('touchstart','div.list',function(e){
+				aa=e.originalEvent.changedTouches[0].clientX;
+			})
+			$('#fox').on('touchend','div.list',function(e){
+				var bb=e.originalEvent.changedTouches[0].clientX;
+				if(bb-aa>50){
+//					$('.list').css('color','#ccc')
+					arr.splice($(this).index(),1);
+					localStorage.x=JSON.stringify(arr);
+					$(this).remove();
+				}
+			})
+			
+//			if(localStorage.x){
+//				arr=JSON.parse(localStorage.x);
+//				for(var i=0;i<arr.length;i++){
+//					$('<div.list>').html(arr[i]).appendTo('#fox');
+//				}
+//			}
+//			
+		$('#anniu').on('touchend',function(){
+			$(".tankuang").css({'opacity':'1','left':'0','transform':'scale(1)'})
+//			var r=Math.random().toFixed(2);
+			$('#xiao').on('touchend',function(){
+				$(".tankuang").css({'opacity':'1','left':'0','transform':'scale(0)'})
+			})
+			$('#que').on('touchend',function(){
+				var v=$.trim($('#ttt').val());
+				if(!v){
+					return;
+				}
+				arr.push(v);
+				localStorage.x=JSON.stringify(arr);
+				render();
+				$(".tankuang").css({'opacity':'1','left':'0','transform':'scale(0)'})
+				
+				
+			})
+//			arr.push(todo);
+//			localStorage.x=JSON.stringify(arr);
+//			$('<div class="list">').html(todo).appendTo("#fox");
+		});
+		function render(){
+				$('#fox').empty();
+				for(var i=0;i<arr.length;i++){
+//					var c=(arr[i].state) ? "done" :"";
+					$('<div class="list">'+arr[i]+'</div>').appendTo($('#fox'));
+				}
+			}
+		
+		
+		})
+	</script>
+</html>

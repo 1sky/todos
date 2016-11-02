@@ -1,0 +1,251 @@
+$list:320px,360px,375px,384px,412px,414px,600px,640px,768px,800px,1280px,1440px,1600px;
+html{
+    font-size: 100px;
+}
+body{
+    font-size: 15px;
+    margin: 0px;
+    padding: 0px;
+    font-family: "微软雅黑";
+    border: 0px;
+}
+*{
+    font-family: "微软雅黑";
+    box-sizing: border-box;
+     outline: none;
+}
+@font-face{
+    font-family: 'iconfont';
+}
+.iconfont{
+    font-family: 'iconfont';
+}
+ul,li,ol{
+    text-decoration: none;
+    list-style: none;
+}
+$m:375px;
+@each $w in $list{
+    @media screen and (min-width:#{$w}){
+        html{
+            font-size: 100px * $w/$m;
+        }
+    }
+    
+    
+}
+@mixin center{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+}
+@mixin shuiping{
+    position: absolute;
+    right: 0;
+    left: 0;
+    margin: auto;
+}
+.box{
+    width: 100%;
+    height: 0.5rem;
+    background: #343D40;
+    position: relative;
+//  @include center;
+    .a{
+        position: absolute;
+        bottom: 0.05rem;
+        left:1.7rem;
+        color: #fff;
+        font-size: 18px;
+    }
+    .b{
+        outline: none;
+        border: 0;
+        width: 0.16rem;
+        height: 0.16rem;
+        line-height: 16px;
+        text-align: center;
+        position: absolute;
+        bottom: 0.1rem;
+        right: 0.2rem;
+        color: #fff;
+        font-size: 30px;
+        background: none;
+    }
+    #logo{
+        overflow: hidden;
+        width: 0.25rem;
+        height: 0.25rem;
+        border-radius: 50%;
+        position: absolute;
+        bottom: 0.05rem;
+        left: 0.1rem;
+        background: red;
+        z-index: 3;
+        .n{
+            width: 0.25rem;
+            height: 0.25rem;
+        }
+    }
+}
+//输入弹框
+//@keyframes donghua{
+//  from{
+//      transform: scale(0);
+//      opacity: 0;
+//      left: 100%;
+//  }
+//  to{
+//      transform: scale(1);
+//      opacity: 1;
+//      left: 0;
+//  }
+//}
+.tankuang{
+    width: 100%;
+    height: 1rem;
+    background: #FCFCFC;
+    position: absolute;
+    top: 2rem;
+    left: 100%;
+//  opacity: 0;
+    transition: all 1s;
+    .a{
+//      @include center;
+        @include shuiping;
+        width: 95%;
+        height: 0.5rem;
+        border: 1px solid #EDEDED;
+        -webkit-border-radius: 10px;
+        outline: none;
+    }
+    @mixin xia{
+        position: absolute;
+        bottom: 0;
+        left: 0;
+    }
+    .b{
+        @include xia;
+        width: 50%;
+        height: 0.4rem;
+        float: left;
+        border: 1px solid #EDEDED;
+        background: #fff;
+        outline: none;
+    }
+    .c{
+        @include xia;
+        left: 50%;
+        width: 50%;
+        height: 0.4rem;
+        float: left;
+        border: 1px solid #EDEDED;
+        background: #fff;
+        outline: none;
+        color: cornflowerblue;
+    }
+}
+
+//添加框
+#fox{
+//      padding-left: 0.05rem;
+    .list{
+        float: left;
+        width: 100%;
+        height: 0.45rem;
+        background: #FCFCFC;
+//      @include center;
+        border-bottom: 1px solid #EDEDED;
+        line-height: 0.45rem;
+        padding-left: 0.1rem;
+        color: #343D40;
+    }
+}
+//底部导航
+.bottom{
+    width: 100%;
+    height: 0.5rem;
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+//  background: red;
+    z-index: 10;
+    border-top: 1px solid #ccc;
+    border: 0px;
+    background: none;
+    .a,.b,.c,.d,.e{
+        width: 20%;
+        height: 100%;
+        float: left;
+        text-align: center;
+        line-height: 0.5rem;
+        .iconfont{
+            border: 0px;
+            background: none;
+            font-size: 25px;
+        }
+    }
+}
+//侧滑
+.cehua{
+    width: 90%;
+    height: 100%;
+    background:#F2F2F2;
+    position: absolute;
+    top: 0px;
+    left: -90%;
+    z-index: 100;
+    transition: all 1s;
+    .tou{
+        width: 100%;
+        height: 1.2rem;
+        background: #0AB6F4;
+        .log{
+            width: 0.5rem;
+            height: 0.5rem;
+            border-radius: 50%;
+           float: left;
+           margin-top: 0.35rem;
+           margin-left: 0.2rem;
+           overflow: hidden;
+           .s{
+               width: 0.5rem;
+           }
+        }
+        .jiantou{
+            position: absolute;
+            top: 0.5rem;
+            right: 0.2rem;
+            line-height: 0.2rem;
+            .iconfont{
+                color: #fff;
+                font-size: 25px;
+            }
+        }
+        .wenzi{
+            width: auto;
+            position: absolute;
+            bottom: 5.5rem;
+            left: 0.2rem;
+            .aa{
+                color: #fff;
+                font-size: 15px;
+            }
+        }
+    }
+    .biaoqian{
+        width: 100%;
+        height: 0.5rem;
+        line-height: 0.5rem;
+        padding-left: 0.2rem;
+        .iconfont{
+            font-size: 20px;
+        }
+        .k{
+            margin-left: 0.1rem;
+            color: #000;
+            font-size: 20px;
+        }
+    }
+}
