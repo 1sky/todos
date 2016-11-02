@@ -26,11 +26,11 @@
 				<img src="img/395.jpg" alt="" class="n" />
 			</div>
 		</div>
-		<div class="tankuang">
+		<!--<div class="tankuang">
 			<input type="text" class="a" id='ttt'/>
 			<button class="b" id='xiao'>取消</button>
 			<button class="c" id='que'>确定</button>
-		</div>
+		</div>-->
 		<!--添加任务-->
 		<div id="fox">
 			<div class="list">
@@ -91,6 +91,11 @@
 			</div>
 			
 		</div>
+		<div class="tankuang">
+			<input type="text" class="a" id='ttt'/>
+			<button class="b" id='xiao'>取消</button>
+			<button class="c" id='que'>确定</button>
+		</div>
 	</body>
 	<script>
 		$(function(){
@@ -121,19 +126,24 @@
 				var bb=e.originalEvent.changedTouches[0].clientX;
 				if(bb-aa>30){
 //					$('.list').css('color','#ccc')
-					$('.kkk').css('display','block').css('color','red')
-					$('.sss').css('color','#ccc')
+//					$('.kkk').css('display','block').css('color','red')
+//					$('.sss').css('color','#ccc')
 					var yy=$(this).index();
-					$('.kkk').on('click',function(){
-						arr.splice(yy,1);
-						localStorage.x=JSON.stringify(arr);
-						$('.list').eq(yy).remove();
-					})
+					for(var i;i<list.length;I++){
+						$('.kkk').css('display','block').css('color','red')
+						$('.sss').css('color','#ccc')
+						$('.kkk').on('click',function(){
+							arr.splice(yy,1);
+							localStorage.x=JSON.stringify(arr);
+							$('.tankuang').yy.remove();
+						})
+					}
+//					localStorage.x=JSON.stringify(arr);
 					
 				}
 				if(bb-aa<-30){
 					$('.sss').css('color','#000');
-					$('.kkk').css('color','#000')
+					$('.kkk').css('color','#000');
 				}
 			})
 			
@@ -159,7 +169,7 @@
 				localStorage.x=JSON.stringify(arr);
 				render();
 				$(".tankuang").css({'opacity':'1','left':'0','transform':'scale(0)'})
-				
+				$('#ttt').value==""
 				
 			})
 //			arr.push(todo);

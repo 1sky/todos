@@ -165,6 +165,7 @@ ul, li, ol {
   opacity: 0;
   transform: scale(0);
   transition: all 1s;
+  z-index: 10000;
 }
 
 .tankuang .a {
@@ -177,6 +178,7 @@ ul, li, ol {
   border: 1px solid #EDEDED;
   -webkit-border-radius: 10px;
   outline: none;
+  font-size: 18px;
 }
 
 .tankuang .b {
