@@ -129,13 +129,13 @@
 //					$('.kkk').css('display','block').css('color','red')
 //					$('.sss').css('color','#ccc')
 					var yy=$(this).index();
-					for(var i;i<list.length;I++){
+					for(var i=0;i<$('.list').length;i++){
 						$('.kkk').css('display','block').css('color','red')
 						$('.sss').css('color','#ccc')
 						$('.kkk').on('click',function(){
 							arr.splice(yy,1);
 							localStorage.x=JSON.stringify(arr);
-							$('.tankuang').yy.remove();
+//							$('.tankuang').yy.remove();
 						})
 					}
 //					localStorage.x=JSON.stringify(arr);
