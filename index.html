@@ -99,6 +99,31 @@
 	</body>
 	<script>
 		$(function(){
+			var biaoqian=$('.biaoqian');
+//			var now=0;
+//			var next=0;
+			
+			for(var i=0;i<biaoqian.length;i++){
+//				$('.bianqian').css('background','#fff')
+//				next=now+1;
+//				
+				$(biaoqian[i]).on('touchend',function(){
+					biaoqian.removeClass("color")
+					$(this).addClass("color")
+//					$('.bianqian').css('background','#000')
+//					$('.bianqian').css('background','#ccc')
+//					$('.biaoqian').style.background='#fff'
+//					biaoqian[now].style.background='#fff'
+//					biaoqian[next].style.background='#ccc'
+//					this.style.background='#ccc';
+//					this.css('')
+//					now=next;
+				})
+//				$('.bianqian').css('background','#fff');
+//				now=next;
+			}
+			
+			
 //			侧滑
 			$('#logo').on('click',function(){
 				$('.cehua').css('left','0')

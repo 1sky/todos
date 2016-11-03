@@ -326,3 +326,7 @@ ul, li, ol {
   color: #000;
   font-size: 20px;
 }
+
+.color {
+  background: #ccc;
+}
