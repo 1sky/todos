@@ -129,13 +129,14 @@
 //					$('.kkk').css('display','block').css('color','red')
 //					$('.sss').css('color','#ccc')
 					var yy=$(this).index();
+					var ii=$(this)
 					for(var i=0;i<$('.list').length;i++){
 						$('.kkk').css('display','block').css('color','red')
 						$('.sss').css('color','#ccc')
-						$('.kkk').on('click',function(){
+						$('.kkk').on('touchend',function(){
 							arr.splice(yy,1);
 							localStorage.x=JSON.stringify(arr);
-//							$('.tankuang').yy.remove();
+							ii.remove();
 						})
 					}
 //					localStorage.x=JSON.stringify(arr);
@@ -169,7 +170,7 @@
 				localStorage.x=JSON.stringify(arr);
 				render();
 				$(".tankuang").css({'opacity':'1','left':'0','transform':'scale(0)'})
-				$('#ttt').value==""
+//				$('#ttt').value==""
 				
 			})
 //			arr.push(todo);
